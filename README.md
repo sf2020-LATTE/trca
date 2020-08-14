@@ -12,7 +12,38 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+## userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|email|string|null:false|
+|password|string|null:false|
 
+### Association
+- has_many :training
+- has_many :date
+
+## trainingテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|text||
+|body|text||
+|user_id|integer|null:false, foreign_key:true|
+|date_id|integer|null:false, foreign_key:true|
+
+### Association
+- belongs_to :user
+- belongs_to :date
+
+## dateテーブル
+|Column|Type|Options|
+|------|----|-------|
+|date|integer||
+|user_id|integer|null:false, foreign_key:true|
+
+### Association
+- has_many :training
+- belongs_to :user
 * Database initialization
 
 * How to run the test suite
