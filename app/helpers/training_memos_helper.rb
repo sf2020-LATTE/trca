@@ -1,0 +1,2 @@
+module TrainingMemosHelper
+end
