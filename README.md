@@ -23,7 +23,7 @@ Things you may want to cover:
 - has_many :training
 - has_many :date
 
-## trainingテーブル
+## training_memoテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|text||

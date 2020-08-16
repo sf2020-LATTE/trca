@@ -10,6 +10,7 @@ class LogsController < ApplicationController
   # GET /logs/1
   # GET /logs/1.json
   def show
+    @logs = Log.all
   end
 
   # GET /logs/new
@@ -69,6 +70,6 @@ class LogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def log_params
-      params.require(:log).permit(:name, :start_time)
+      params.require(:log).permit(:name, :memo, :start_time)
     end
 end
