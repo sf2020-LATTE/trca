@@ -1,14 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @log.name %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= @log.start_time %>
-</p>
-
-<%= link_to 'Edit', edit_log_path(@log) %> |
-<%= link_to 'Back', logs_path %>
+<!DOCTYPE html>
+<html>
+  <header class="header">
+    <div class="header-left">
+      <%= link_to 'Back', logs_path %>
+    </div>
+    <div class="header-main">
+      <p class="header-logo">
+        Training Memos
+      </p>
+    </div>
+    <div class="header-right">
+    </div>
+  </header>
+  <body>
+    <div class="contents">
+      <div class="contents-left"> 
+      </div>
+      <div class="contents-right"> 
+        <% @logs.each do |log| %>
+          <div>
+            <td><%= log.name %></td>
+            <td><%= log.start_time %></td>
+            <%= link_to 'Edit', edit_log_path(@log) %> 
+          </div>
+          <div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
+  <footer>
+  </footer>
+</html>
