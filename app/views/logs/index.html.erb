@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Training Schedule</h1>
-
+<%= link_to 'Trainig memos', root_path %>
 <%= link_to 'New Log', new_log_path %>
 
 <%= month_calendar events: @logs do |date, logs| %>
