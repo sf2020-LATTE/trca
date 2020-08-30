@@ -6,7 +6,6 @@
 
 <%= month_calendar events: @logs do |date, logs| %>
   <%= date %>
-
   <% logs.each do |log| %>
     <div>
       <%= log.name %>

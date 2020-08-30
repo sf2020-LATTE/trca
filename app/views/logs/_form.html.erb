@@ -29,5 +29,12 @@
     <%= form.label :memo %>
     <%= form.text_area :memo,  size: "100x10" %>
   </div>
-
+  <div class="field-weight">
+    <%= form.label :"weight(kg)" %>
+    <%= form.number_field(:weight, in: 1.0..120.0, step: 0.2) %>
+  </div>
+  <div class="field-fat">
+    <%= form.label :"fat(%)" %>
+    <%= form.number_field(:fat, in: 1.0..40.0, step: 0.2)%>
+  </div>
 <% end %>
