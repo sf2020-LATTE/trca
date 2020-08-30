@@ -26,7 +26,6 @@ class LogsController < ApplicationController
   # POST /logs.json
   def create
     @log = Log.new(log_params)
-
     respond_to do |format|
       if @log.save
         format.html { redirect_to @log, notice: 'Log was successfully created.' }
@@ -70,6 +69,6 @@ class LogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def log_params
-      params.require(:log).permit(:name, :memo, :start_time)
+      params.require(:log).permit(:name, :memo, :start_time,:weight, :fat)
     end
 end

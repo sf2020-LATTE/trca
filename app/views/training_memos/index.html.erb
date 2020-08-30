@@ -34,11 +34,12 @@
               <tr>
                 <td><%= log.name %></td>
                 <td><%= log.start_time %></td>
+                <td><%= log.memo %></td>
+                <td><%= log.weight %></td>
                 <td><%= link_to 'Show', log %></td>
                 <td><%= link_to 'Edit', edit_log_path(log) %></td>
                 <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
-              <td><%= log.memo %></td>
             <% end %>
           </tbody>
         </table>
