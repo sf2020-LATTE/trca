@@ -25,6 +25,15 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field-fat">
+    <%= form_for(@log) do |form| =%>
+      <%= "運動した時間"%>
+      <%= form.number_field :time, in: 0..180, step: 10 =%>
+      <%= "✖️ (疲れ具合)"%>
+      <%= form.number_field :tiredness, in: 0..3, step: 1 =%>
+    <% end %>
+  </div>
+
   <div class="field-memo">
     <%= form.label :memo %>
     <%= form.text_area :memo,  size: "100x10" %>
