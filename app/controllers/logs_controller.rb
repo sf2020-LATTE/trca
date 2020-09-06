@@ -69,6 +69,9 @@ class LogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def log_params
-      params.require(:log).permit(:name, :memo, :start_time,:weight, :fat)
+      params.require(:log).permit(:name, :memo, :start_time,:weight, :fat,:time,:tiredness)
+    end
+    def log_information
+      log_params.merge(@log.set_extra_information)
     end
 end
