@@ -21,29 +21,17 @@
   </div>
   
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field-fat">
-    <%= form_for(@log) do |form| =%>
-      <%= "運動した時間"%>
-      <%= form.number_field :time, in: 0..180, step: 10 =%>
-      <%= "✖️ (疲れ具合)"%>
-      <%= form.number_field :tiredness, in: 0..3, step: 1 =%>
-    <% end %>
-  </div>
-
-  <div class="field-memo">
-    <%= form.label :memo %>
-    <%= form.text_area :memo,  size: "100x10" %>
-  </div>
-  <div class="field-weight">
-    <%= form.label :"weight(kg)" %>
-    <%= form.number_field(:weight, in: 1.0..120.0, step: 0.2) %>
-  </div>
-  <div class="field-fat">
-    <%= form.label :"fat(%)" %>
-    <%= form.number_field(:fat, in: 1.0..40.0, step: 0.2)%>
+    <%= form.label :"トレーニング内容" %>
+    <%= form.text_field :name %><br>
+    <%= form.label :"体重(kg)" %>
+    <%= form.number_field(:weight, in: 1.0..120.0, step: 0.2) %><br>
+    <%= form.label :"体脂肪(%)" %>
+    <%= form.number_field(:fat, in: 1.0..40.0, step: 0.2)%><br>
+    <%= "今日の頑張り = 運動した時間(分）"%>
+    <%= form.number_field :time, in: 0..180, step: 10 =%>
+    <%= "✖️ 燃え尽き度(３段階）"%>
+    <%= form.select :tiredness, [ ["🔥",1], ["🔥🔥", 2], ["🔥🔥🔥", 3 ]], prompt: "燃え尽き度" %>
+    <%= form.label :"メモ" %>
+    <%= form.text_area :memo,  size: "100x10" %><br>
   </div>
 <% end %>
