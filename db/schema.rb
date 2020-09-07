@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 2020_09_05_024800) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "memo"
-    t.string "weight"
-    t.string "fat"
-    t.integer "time"
-    t.integer "effort"
-    t.integer "tiredness"
+    t.integer "weight", default: 0
+    t.integer "fat", default: 0
+    t.integer "time", default: 0
+    t.integer "effort", default: 0
+    t.integer "tiredness", default: 0
   end
 
 end

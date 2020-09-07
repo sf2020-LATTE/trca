@@ -1,13 +1,11 @@
 // Place all the styles related to the training_memos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.body{
-  background: lightskyblue;
-}
+
 .header{
   height:100px;
   display:flex;
-  background-color: lightblue;
+  background-color: #68c5F3;
   border:solid;
   border-width: 1px;
 }
@@ -39,18 +37,42 @@
 }
 .contents-left{
   width:300px;
-  background-color:lightblue;
+  background-color:#68c5F3;
   border:solid;
   border-width: 1px;
 }
 .contents-right{
   width:calc(100vw - 300px);
   background-color: white;
-  border:solid;
   border-width: 1px;
 }
-
-footer{
+.memo-list{
+  width:calc(100vw - 300px);
+  height:calc(100vh - 190px);
+  overflow: scroll;
+}
+.memo-box{
+  border: 1px solid #a8b7c5; 
+  height:300px;
+}
+.date-table{
+  width: 300px;
+  border-collapse:collapse;
+  border-spacing: 0;
+}
+table th{
+  text-align: center;
+  color:#454545;
+  border: 1px solid #a8b7c5;
+  height:15px;
+}
+table td{
+  text-align: center;
+  border: 1px solid #a8b7c5;
+  width:100px;
+  height:15px;
+}
+.footer{
   height: 90px;
   background-color: lightsteelblue;
 }

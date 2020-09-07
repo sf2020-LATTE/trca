@@ -20,29 +20,36 @@
       <div class="contents-left"> 
       </div>
       <div class="contents-right"> 
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Start time</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @logs.each do |log| %>
-              <tr>
-                <td><%= log.name %></td>
-                <td><%= log.start_time %></td>
-                <td><%= log.memo %></td>
-                <td><%= log.weight %></td>
-                <td><%= link_to 'Show', log %></td>
-                <td><%= link_to 'Edit', edit_log_path(log) %></td>
-                <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <div class="memo-list">
+          <% @logs.each do |log| %>
+            <div class="memo-box">
+                <div>
+                  <p>トレーニング内容：<%= log.name %></P>
+                  <span>日時:<%= log.start_time %>
+                  <%= link_to 'Show', log %>
+                  <%= link_to 'Edit', edit_log_path(log) %>
+                  <%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+                </div>
+                <table class="data-table">
+                  <tr>
+                    <th>体重</th>
+                    <th>体脂肪率</th>
+                    <th>頑張り</th>
+                  </tr>
+                  <tr>
+                    <td><%= log.weight %></td>
+                    <td><%= log.fat %></td>
+                    <td><%= log.effort %></td>
+                  </tr>
+                </table>
+                <div>
+                </div>
+                <div>
+                  <%= log.memo %>
+                </div>
+            </div>  
+          <% end %>
+        </div>
       </div>
     </div>
   </body>

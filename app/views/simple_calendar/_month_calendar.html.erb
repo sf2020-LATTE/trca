@@ -5,7 +5,7 @@
     <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
   </div>
   <div>
-    <%= column_chart @logs.group_by_day(:start_time, format: "%b %d", range: 4.weeks.ago.midnight..Time.now).sum(:effort), xtitle: "日付", ytitle: "頑張り
+    <%= column_chart @logs.group_by_day(:start_time, format: "%b %d", range: start_date - 1.months..start_date + 1.months).sum(:effort), xtitle: "日付", ytitle: "頑張り
     ", width: "85vw", height: "200px"%>
   </div>
   <div>
@@ -25,6 +25,6 @@
           </tr>
         <% end %>
       </tbody>
-    </table>
+    </table>_
   </div>
 </div>
