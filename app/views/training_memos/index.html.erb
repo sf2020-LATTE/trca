@@ -4,12 +4,12 @@
   <header class="header">
     <div class="header-left">
       <div>
-        <%= link_to 'calender', logs_path %>
+        <%= link_to 'カレンダーへ', logs_path %>
       </div>
     </div>
     <div class="header-main">
       <p class="header-logo">
-        Training Memos
+        トレーニング一覧
       </p>
     </div>
     <div class="header-right">
@@ -20,29 +20,48 @@
       <div class="contents-left"> 
       </div>
       <div class="contents-right"> 
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Start time</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @logs.each do |log| %>
-              <tr>
-                <td><%= log.name %></td>
-                <td><%= log.start_time %></td>
-                <td><%= log.memo %></td>
-                <td><%= log.weight %></td>
-                <td><%= link_to 'Show', log %></td>
-                <td><%= link_to 'Edit', edit_log_path(log) %></td>
-                <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+        <div class="memo-list">
+          <% @logs.each do |log| %>
+            <div class="memo-box">
+                <div class="memo-footer">
+                  <div class="memo-titlebox">
+                    <div class="memo-time">
+                      日時:<%= log.start_time %>
+                    </div>
+                    <div class="memo-title">
+                      <%= log.name %>
+                    </div>
+                  </div>
+                  <div class="memo-btns">
+                    <p><%= link_to '詳細', log %>
+                    <%= link_to '編集', edit_log_path(log) %>
+                    <%= link_to '削除', log, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                  </div>
+                </div>
+                <table class="data-table">
+                  <tr>
+                    <th>体重</th>
+                    <th>体脂肪率</th>
+                    <th>運動した時間</th>
+                    <th>燃え尽き度</th>
+                    <th>頑張り</th>
+                  </tr>
+                  <tr>
+                    <td><%= log.weight %></td>
+                    <td><%= log.fat %></td>
+                    <td><%= log.time %></td>
+                    <td><%= log.tiredness %></td>
+                    <td><%= log.effort %></td>
+                  </tr>
+                </table>
+                <div>
+                </div>
+                <div class="memo-detail">
+                  <%= log.memo %>
+                </div>
+            </div>  
+          <% end %>
+        </div>
       </div>
     </div>
   </body>
