@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Training Schedule</h1>
-<%= link_to 'Trainig memos', root_path %>
-<%= link_to 'New Log', new_log_path %>
-
+<div class="calender-btn">
+  <%= link_to '➡️トレーニング一覧へ', root_path %>
+  <%= link_to '➡️記録する', new_log_path %>
+</div>
 <%= month_calendar events: @logs do |date, logs| %>
   <%= date %>
   <% logs.each do |log| %>
