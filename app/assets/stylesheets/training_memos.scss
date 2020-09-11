@@ -5,8 +5,6 @@
 .header{
   height:100px;
   display:flex;
-  background-color: #68c5F3;
-
 }
 .header-left{
   width: 300px;
@@ -14,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .header-main{
   width: calc(100vw - 400px);
@@ -34,9 +33,9 @@
 }
 .contents-left{
   width:300px;
-  background-color:#68c5F3;
-  border:solid;
-  border-width: 1px;
+}
+.contents-left>p{
+  font-size: 20px;
 }
 .contents-right{
   width:calc(100vw - 300px);
@@ -74,7 +73,10 @@
 }
 .memo-btns{
   width:calc(100% - 80% );
+  font-size: 15px;
+  justify-content: center;
   text-align: center;
+  margin-top: 15px;
 }
 .memo-detail{
   border: 1px solid #a8b7c5;

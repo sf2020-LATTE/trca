@@ -1,12 +1,12 @@
 <div class="simple-calendar">
-  <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
-    <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
-  </div>
-  <div>
+  <div class="chart">
     <%= column_chart @logs.group_by_day(:start_time, format: "%b %d", range: start_date - 1.months..start_date + 1.months).sum(:effort), xtitle: "日付", ytitle: "頑張り
     ", width: "85vw", height: "200px"%>
+  </div>
+  <div class="calendar-heading">
+    <%= link_to t('simple_calendar.previous', default: 'Previous←'), calendar.url_for_previous_view %>
+    <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+    <%= link_to t('simple_calendar.next', default: '→Next'), calendar.url_for_next_view %>
   </div>
   <div>
     <table>

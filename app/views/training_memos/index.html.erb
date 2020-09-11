@@ -3,9 +3,6 @@
 <html>
   <header class="header">
     <div class="header-left">
-      <div>
-        <%= link_to 'カレンダーへ', logs_path %>
-      </div>
     </div>
     <div class="header-main">
       <p class="header-logo">
@@ -18,6 +15,8 @@
   <body>
     <div class="contents">
       <div class="contents-left"> 
+        <p><%= link_to '➡️カレンダーへ', logs_path %></p>
+        <p><%= link_to '➡️記録する', new_log_path %></p>
       </div>
       <div class="contents-right"> 
         <div class="memo-list">
@@ -33,9 +32,9 @@
                     </div>
                   </div>
                   <div class="memo-btns">
-                    <p><%= link_to '詳細', log %>
+                    <%= link_to '詳細', log %>
                     <%= link_to '編集', edit_log_path(log) %>
-                    <%= link_to '削除', log, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                    <%= link_to '削除', log, method: :delete, data: { confirm: 'Are you sure?' } %>
                   </div>
                 </div>
                 <table class="data-table">
