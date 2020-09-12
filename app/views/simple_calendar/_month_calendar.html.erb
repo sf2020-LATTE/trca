@@ -1,7 +1,6 @@
 <div class="simple-calendar">
   <div class="chart">
-    <%= column_chart @logs.group_by_day(:start_time, format: "%b %d", range: start_date - 1.months..start_date + 1.months).sum(:effort), xtitle: "日付", ytitle: "頑張り
-    ", width: "85vw", height: "200px"%>
+    <%= column_chart @logs.group_by_day(:start_time, format: "%b %d", range: start_date - 1.months..start_date + 1.months).sum(:effort), xtitle: "日付", ytitle: "頑張り", width: "85vw", height: "200px"%>
   </div>
   <div class="calendar-heading">
     <%= link_to t('simple_calendar.previous', default: 'Previous←'), calendar.url_for_previous_view %>
@@ -25,6 +24,6 @@
           </tr>
         <% end %>
       </tbody>
-    </table>_
+    </table>
   </div>
 </div>
